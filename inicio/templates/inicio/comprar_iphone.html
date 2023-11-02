@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}
+Iphone Shop | Comprar
+{% endblock title %}
+
+{% block header_title %}Comprar Iphone{% endblock header_title %}
+
+{% block header_subtitle %}{% endblock header_subtitle %}
+
+{% block main %}
+    <form action="" method="POST">
+        {% csrf_token %}
+        {% comment %} <p>
+            Modelo:
+            <input type="text" name="modelo">
+        </p>
+        <p>
+            Color:
+            <input type="text" name="color">
+        </p>
+        <p>
+            Memoria:
+            <input type="number" name="memoria">
+        </p> {% endcomment %}
+        {{formulario}}
+        <input type="submit" value="Comprar">
+    </form>
+{% endblock main %}
