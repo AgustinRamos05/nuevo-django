@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}
+Iphone Shop | Detalle
+{% endblock title %}
+
+{% block header_title %}Detalles del producto{% endblock header_title %}
+
+{% block header_subtitle %}{% endblock header_subtitle %}
+
+{% block main %}
+    <ul>
+        <li> Modelo: {{iphone.modelo}}</li>
+        <li>Color: {{iphone.color}}</li>
+        <li>Memoria: {{iphone.memoria}}</li>
+        <li>Descripcion: {{iphone.descripcion}}</li>
+    </ul>
+{% endblock main %}

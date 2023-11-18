@@ -46,7 +46,7 @@
             </div>
         </nav>
         <!-- Mashead header-->
-        
+        {% block header %}
         <header class="masthead">
             <div class="container px-5">
                 <div class="row gx-5 align-items-center">
@@ -88,6 +88,8 @@
                 </div>
             </div>
         </header>
+        {% endblock header %}
+
         {% block main %}
         <!-- Quote/testimonial aside-->
         <aside class="text-center bg-gradient-primary-to-secondary">

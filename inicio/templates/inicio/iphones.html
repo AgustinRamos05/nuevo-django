@@ -16,8 +16,9 @@ Iphone Shop | Productos
 
 {% if listado_iphones %}
 <ul>
+   
 {% for iphone in listado_iphones %}
-    <li>{{iphone}}</li>
+    <li> <a href="{% url "actualizar" iphone.id %}">| Actualizar |</a> {{iphone}} <a href="{% url "eliminar" iphone.id %}">| Eliminar |</a><a href="{% url "detalle_iphone" iphone.id %}"> |Ver mas| </a></li>
 {% endfor %}
 </ul>   
 {% else %}
