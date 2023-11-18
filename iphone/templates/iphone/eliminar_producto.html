@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}
+Iphone Shop | Eliminar
+{% endblock title %}
+
+{% block header_title %}Eliminar Producto{% endblock header_title %}
+
+{% block header_subtitle %}{% endblock header_subtitle %}
+
+{% block main %}
+    <form action="" method="POST">
+        {% csrf_token %}
+    
+        ¿Desea eliminar el producto {{mac.modelo}}?
+        <input type="submit" value="Confirmar">
+    </form> 
+{% endblock main %}

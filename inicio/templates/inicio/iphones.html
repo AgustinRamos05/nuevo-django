@@ -1,14 +1,17 @@
 {% extends "base.html" %}
 
 {% block title %}
-Iphone Shop | Productos
+Iphone Shop | Producto
 {% endblock title %}
 
-{% block header_title %}Productos{% endblock header_title %}
+{% block header_title %}Iphones{% endblock header_title %}
 
 {% block header_subtitle %}{% endblock header_subtitle %}
 
 {% block main %}
+<p>
+    <a href="{% url "comprar_iphone" %}">Hacer pedido</a>
+</p>
 <form action="">
     <input type="text" name="modelo" placeholder="Buscar modelo">
     <input type="submit" name="buscar">

@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}
+Iphone Shop | Mac
+{% endblock title %}
+
+{% block header_title %}Mac{% endblock header_title %}
+
+{% block header_subtitle %}{% endblock header_subtitle %}
+
+{% block main %}
+<p>
+    <a href="{% url "crear_iphone" %}">Hacer pedido</a>
+</p>
+<form action="">
+    <input type="text" name="modelo" placeholder="Buscar modelo">
+    <input type="submit" name="buscar">
+</form>
+
+{% if listado_productos %}
+<ul>
+   
+{% for producto in listado_productos %}
+    <li>{{producto}} <a href="{% url "eliminar_producto" producto.id %}">| Eliminar |</a><a href="{% url "actualizar_producto" producto.id %}">| Actualizar |</a> <a href="{% url "detalle_producto" producto.id %}">| Ver mas |</a></li>
+    
+{% endfor %}
+</ul>   
+{% else %}
+    <p>No se encontro el producto que desea</p>
+{% endif %}   
+{% endblock main %}
