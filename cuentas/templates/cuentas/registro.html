@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}
+Iphone Shop | Registro
+{% endblock title %}
+
+{% block header_title %}Registrate{% endblock header_title %}
+
+{% block header_subtitle %}{% endblock header_subtitle %}
+
+{% block main %}
+    <form action="{% url "registro" %}" method="POST">
+        {% csrf_token %}
+        <table>
+           {{form_registro}} 
+        </table>
+        
+        <input type="submit" value="Registrarse">
+    </form>
+{% endblock main %}

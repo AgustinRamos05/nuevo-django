@@ -1,10 +1,12 @@
 from django.shortcuts import render, redirect
 from inicio.models import Iphone
 from inicio.forms import ComprarIphoneForm, ActualizarIphoneForm
+from django.contrib.auth.decorators import login_required
 
 
 def inicio(request):
    return render(request, 'inicio/inicio.html', {})
+   
    
 def iphones(request):
    
@@ -18,6 +20,7 @@ def iphones(request):
 
    return render(request, 'inicio/iphones.html', {'listado_iphones': listado_iphones})
 
+@login_required
 def comprar_iphone(request):
    
    if request.method == 'POST':
@@ -39,11 +42,13 @@ def comprar_iphone(request):
    formulario = ComprarIphoneForm() 
    return render(request, 'inicio/comprar_iphone.html',{'formulario': formulario})  
 
+@login_required
 def eliminar(request, iphone_id):
    iphone_eliminado = Iphone.objects.get(id=iphone_id)
    iphone_eliminado.delete()
    return redirect('productos')
 
+@login_required
 def actualizar(request, iphone_id):
    iphone_actualizar = Iphone.objects.get(id=iphone_id)
    
