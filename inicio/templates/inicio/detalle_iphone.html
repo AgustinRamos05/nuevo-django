@@ -10,7 +10,7 @@ Iphone Shop | Detalle
 
 {% block main %}
     <ul>
-        <li> Modelo: {{iphone.modelo}}</li>
+        <li> Modelo: {{iphone.modelo | safe}}</li>
         <li>Color: {{iphone.color}}</li>
         <li>Memoria: {{iphone.memoria}}</li>
         <li>Descripcion: {{iphone.descripcion}}</li>

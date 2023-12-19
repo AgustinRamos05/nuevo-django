@@ -11,7 +11,10 @@ Iphone Shop | Modificar
 {% block main %}
     <form action="" method="POST">
         {% csrf_token %}
-        {{formulario}}
-        <input type="submit" value="Modificar">
+        <table>
+            {{formulario.media}}
+            {{formulario}}
+             <input type="submit" value="Modificar">
+        </table>  
     </form>
 {% endblock main %}

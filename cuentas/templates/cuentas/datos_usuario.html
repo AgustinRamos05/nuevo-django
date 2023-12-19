@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}
+Iphone Shop | Perfil Del Usuario
+{% endblock title %}
+
+{% block header_title %}Perfil del usuario{% endblock header_title %}
+
+{% block header_subtitle %}{% endblock header_subtitle %}
+
+{% block main %}
+    <ul>
+        <li>Usuario: {{datos_usuario}}</li>
+        <li>Email: {{datos_usuario.email}}</li>
+        <li>Nombre: {{datos_usuario.first_name}}</li>
+        <li>Apellido: {{datos_usuario.last_name}}</li>
+        <li>Descripcion: {{datos_usuario.descripcion}}</li>
+        
+        <li><a href={% url "editar_perfil" %}>Editar Perfil</a></li>
+    </ul>
+{% endblock main %}

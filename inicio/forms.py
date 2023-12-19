@@ -1,7 +1,8 @@
 from django import forms
+from ckeditor.fields import RichTextFormField
 
 class BaseIphoneForm(forms.Form):
-    modelo = forms.CharField(max_length=30)
+    modelo = RichTextFormField()
     color = forms.CharField(max_length=30)
     memoria = forms.IntegerField()
     

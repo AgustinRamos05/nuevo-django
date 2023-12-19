@@ -39,7 +39,13 @@
                         <li class="nav-item"><a class="btn btn-primary" href={% url "login" %}>Iniciar Sesion</a></li>
                         <li class="nav-item"><a class="btn btn-secondary" href={% url "registro" %}>Registrarse</a></li>
                         {% else %}
-                        <li class="nav-item">{{request.user.username}}</li>
+                        <li class="nav-item"><a class="nav-link me-lg-3" href={% url "mostrar_perfil" %}>
+                            {% if request.user.user.datosextra.avatar %}
+                            <img src={{request.user.user.datosextra.avatar.url}} alt="avatar">
+                            {% endif %}
+                            
+                            {{request.user.username}}
+                        </a></li>
                         <li class="nav-item"><a class="btn btn-primary" href={% url "logout" %}>Cerrar Sesion</a></li>
                         {% endif %}
                     </ul>
